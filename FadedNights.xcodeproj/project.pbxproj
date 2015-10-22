@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3FFA5DB1BD5DAEB00E85678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */; };
+		A3FFA5DD1BD5DAEB00E85678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */; };
+		A3FFA5E01BD5DAEB00E85678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5DE1BD5DAEB00E85678 /* Main.storyboard */; };
+		A3FFA5E21BD5DAEB00E85678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5E11BD5DAEB00E85678 /* Assets.xcassets */; };
+		A3FFA5E51BD5DAEB00E85678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5E31BD5DAEB00E85678 /* LaunchScreen.storyboard */; };
+		A3FFA5F01BD5DAEB00E85678 /* FadedNightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5EF1BD5DAEB00E85678 /* FadedNightsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3FFA5EC1BD5DAEB00E85678 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3FFA5CF1BD5DAEB00E85678 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3FFA5D61BD5DAEB00E85678;
+			remoteInfo = FadedNights;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A3FFA5D71BD5DAEB00E85678 /* FadedNights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FadedNights.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A3FFA5DF1BD5DAEB00E85678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3FFA5E11BD5DAEB00E85678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3FFA5E41BD5DAEB00E85678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3FFA5E61BD5DAEB00E85678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3FFA5EB1BD5DAEB00E85678 /* FadedNightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FadedNightsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3FFA5EF1BD5DAEB00E85678 /* FadedNightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadedNightsTests.swift; sourceTree = "<group>"; };
+		A3FFA5F11BD5DAEB00E85678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3FFA5D41BD5DAEB00E85678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3FFA5E81BD5DAEB00E85678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3FFA5CE1BD5DAEB00E85678 = {
+			isa = PBXGroup;
+			children = (
+				A3FFA5D91BD5DAEB00E85678 /* FadedNights */,
+				A3FFA5EE1BD5DAEB00E85678 /* FadedNightsTests */,
+				A3FFA5D81BD5DAEB00E85678 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3FFA5D81BD5DAEB00E85678 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3FFA5D71BD5DAEB00E85678 /* FadedNights.app */,
+				A3FFA5EB1BD5DAEB00E85678 /* FadedNightsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3FFA5D91BD5DAEB00E85678 /* FadedNights */ = {
+			isa = PBXGroup;
+			children = (
+				A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */,
+				A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */,
+				A3FFA5DE1BD5DAEB00E85678 /* Main.storyboard */,
+				A3FFA5E11BD5DAEB00E85678 /* Assets.xcassets */,
+				A3FFA5E31BD5DAEB00E85678 /* LaunchScreen.storyboard */,
+				A3FFA5E61BD5DAEB00E85678 /* Info.plist */,
+			);
+			path = FadedNights;
+			sourceTree = "<group>";
+		};
+		A3FFA5EE1BD5DAEB00E85678 /* FadedNightsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A3FFA5EF1BD5DAEB00E85678 /* FadedNightsTests.swift */,
+				A3FFA5F11BD5DAEB00E85678 /* Info.plist */,
+			);
+			path = FadedNightsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3FFA5D61BD5DAEB00E85678 /* FadedNights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3FFA5F41BD5DAEB00E85678 /* Build configuration list for PBXNativeTarget "FadedNights" */;
+			buildPhases = (
+				A3FFA5D31BD5DAEB00E85678 /* Sources */,
+				A3FFA5D41BD5DAEB00E85678 /* Frameworks */,
+				A3FFA5D51BD5DAEB00E85678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FadedNights;
+			productName = FadedNights;
+			productReference = A3FFA5D71BD5DAEB00E85678 /* FadedNights.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A3FFA5EA1BD5DAEB00E85678 /* FadedNightsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3FFA5F71BD5DAEB00E85678 /* Build configuration list for PBXNativeTarget "FadedNightsTests" */;
+			buildPhases = (
+				A3FFA5E71BD5DAEB00E85678 /* Sources */,
+				A3FFA5E81BD5DAEB00E85678 /* Frameworks */,
+				A3FFA5E91BD5DAEB00E85678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3FFA5ED1BD5DAEB00E85678 /* PBXTargetDependency */,
+			);
+			name = FadedNightsTests;
+			productName = FadedNightsTests;
+			productReference = A3FFA5EB1BD5DAEB00E85678 /* FadedNightsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3FFA5CF1BD5DAEB00E85678 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = cs4720;
+				TargetAttributes = {
+					A3FFA5D61BD5DAEB00E85678 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = QW4B85A59T;
+					};
+					A3FFA5EA1BD5DAEB00E85678 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = QW4B85A59T;
+						TestTargetID = A3FFA5D61BD5DAEB00E85678;
+					};
+				};
+			};
+			buildConfigurationList = A3FFA5D21BD5DAEB00E85678 /* Build configuration list for PBXProject "FadedNights" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3FFA5CE1BD5DAEB00E85678;
+			productRefGroup = A3FFA5D81BD5DAEB00E85678 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3FFA5D61BD5DAEB00E85678 /* FadedNights */,
+				A3FFA5EA1BD5DAEB00E85678 /* FadedNightsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3FFA5D51BD5DAEB00E85678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3FFA5E51BD5DAEB00E85678 /* LaunchScreen.storyboard in Resources */,
+				A3FFA5E21BD5DAEB00E85678 /* Assets.xcassets in Resources */,
+				A3FFA5E01BD5DAEB00E85678 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3FFA5E91BD5DAEB00E85678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3FFA5D31BD5DAEB00E85678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3FFA5DD1BD5DAEB00E85678 /* ViewController.swift in Sources */,
+				A3FFA5DB1BD5DAEB00E85678 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3FFA5E71BD5DAEB00E85678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3FFA5F01BD5DAEB00E85678 /* FadedNightsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3FFA5ED1BD5DAEB00E85678 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3FFA5D61BD5DAEB00E85678 /* FadedNights */;
+			targetProxy = A3FFA5EC1BD5DAEB00E85678 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A3FFA5DE1BD5DAEB00E85678 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3FFA5DF1BD5DAEB00E85678 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A3FFA5E31BD5DAEB00E85678 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3FFA5E41BD5DAEB00E85678 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3FFA5F21BD5DAEB00E85678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A3FFA5F31BD5DAEB00E85678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3FFA5F51BD5DAEB00E85678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FadedNights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FadedNights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A3FFA5F61BD5DAEB00E85678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FadedNights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FadedNights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A3FFA5F81BD5DAEB00E85678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FadedNightsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FadedNightsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FadedNights.app/FadedNights";
+			};
+			name = Debug;
+		};
+		A3FFA5F91BD5DAEB00E85678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FadedNightsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FadedNightsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FadedNights.app/FadedNights";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3FFA5D21BD5DAEB00E85678 /* Build configuration list for PBXProject "FadedNights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3FFA5F21BD5DAEB00E85678 /* Debug */,
+				A3FFA5F31BD5DAEB00E85678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3FFA5F41BD5DAEB00E85678 /* Build configuration list for PBXNativeTarget "FadedNights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3FFA5F51BD5DAEB00E85678 /* Debug */,
+				A3FFA5F61BD5DAEB00E85678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A3FFA5F71BD5DAEB00E85678 /* Build configuration list for PBXNativeTarget "FadedNightsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3FFA5F81BD5DAEB00E85678 /* Debug */,
+				A3FFA5F91BD5DAEB00E85678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3FFA5CF1BD5DAEB00E85678 /* Project object */;
+}
