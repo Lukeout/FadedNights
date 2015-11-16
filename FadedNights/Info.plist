@@ -31,7 +31,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>You need to enable location services </string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>FadedLaunch</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
