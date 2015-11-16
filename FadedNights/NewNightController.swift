@@ -18,6 +18,12 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
     @IBOutlet weak var saveButton: UIBarButtonItem!
     var night: Night?
     
+    @IBOutlet weak var location: UILabel!
+    
+    @IBOutlet weak var date: UILabel!
+    
+    
+    
     @IBOutlet var imageView: UIImageView!
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
@@ -54,7 +60,7 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         // needed so keyboard disappears upon hitting enter
         self.nightNameLabel.delegate = self
         
-        
+        date.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.MediumStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         
         // enable the save button only if the text field has a valid Meal name.
         checkValidNightName()

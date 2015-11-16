@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ifR-vP-xVL">
-                                <rect key="frame" x="20" y="72" width="560" height="266"/>
+                                <rect key="frame" x="20" y="72" width="560" height="332"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Night Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="No9-fJ-kPt">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
@@ -175,8 +175,20 @@
                                             <action selector="takePhoto:" destination="oay-qI-Bm1" eventType="touchUpInside" id="stw-oV-h2b"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uy-zy-dgq">
+                                        <rect key="frame" x="0.0" y="146" width="71" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8o-kY-YJS">
+                                        <rect key="frame" x="0.0" y="179" width="41" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-wb-tON">
-                                        <rect key="frame" x="0.0" y="146" width="90" height="120"/>
+                                        <rect key="frame" x="0.0" y="212" width="90" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Ac7-FZ-ff9"/>
                                             <constraint firstAttribute="width" constant="90" id="rpg-MC-BaO"/>
@@ -212,7 +224,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Description" destination="cb6-Id-gDf" id="aCP-2W-sX3"/>
+                        <outlet property="date" destination="n8o-kY-YJS" id="S83-Oh-IUS"/>
                         <outlet property="imageView" destination="FtJ-wb-tON" id="LMQ-TM-7w6"/>
+                        <outlet property="location" destination="3Uy-zy-dgq" id="OZD-6j-4Zv"/>
                         <outlet property="nightNameLabel" destination="No9-fJ-kPt" id="mCz-80-CSl"/>
                         <outlet property="saveButton" destination="ngL-v5-gal" id="PWe-5l-6yx"/>
                     </connections>
