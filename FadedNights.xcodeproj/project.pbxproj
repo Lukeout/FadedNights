@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		32870C041BE15155000AC9B6 /* NewNightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32870C031BE15155000AC9B6 /* NewNightController.swift */; };
 		32870C0A1BE17FCB000AC9B6 /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32870C091BE17FCB000AC9B6 /* Night.swift */; };
+		32A07ECC1BEAE689002BCFA6 /* CustomAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A07ECB1BEAE689002BCFA6 /* CustomAlbum.swift */; };
 		A3FFA5DB1BD5DAEB00E85678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */; };
 		A3FFA5DD1BD5DAEB00E85678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */; };
 		A3FFA5E01BD5DAEB00E85678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5DE1BD5DAEB00E85678 /* Main.storyboard */; };
 		A3FFA5E21BD5DAEB00E85678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5E11BD5DAEB00E85678 /* Assets.xcassets */; };
 		A3FFA5E51BD5DAEB00E85678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5E31BD5DAEB00E85678 /* LaunchScreen.storyboard */; };
 		A3FFA5F01BD5DAEB00E85678 /* FadedNightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5EF1BD5DAEB00E85678 /* FadedNightsTests.swift */; };
+		B277C8C11BF92F2100381B90 /* NightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */; };
+		B277C8C31BF93B4F00381B90 /* NightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,7 @@
 /* Begin PBXFileReference section */
 		32870C031BE15155000AC9B6 /* NewNightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNightController.swift; sourceTree = "<group>"; };
 		32870C091BE17FCB000AC9B6 /* Night.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
+		32A07ECB1BEAE689002BCFA6 /* CustomAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlbum.swift; sourceTree = "<group>"; };
 		A3FFA5D71BD5DAEB00E85678 /* FadedNights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FadedNights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		A3FFA5EB1BD5DAEB00E85678 /* FadedNightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FadedNightsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FFA5EF1BD5DAEB00E85678 /* FadedNightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadedNightsTests.swift; sourceTree = "<group>"; };
 		A3FFA5F11BD5DAEB00E85678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NightTableViewCell.swift; path = ../NightTableViewCell.swift; sourceTree = "<group>"; };
+		B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,13 @@
 		A3FFA5D91BD5DAEB00E85678 /* FadedNights */ = {
 			isa = PBXGroup;
 			children = (
+				B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */,
+				B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */,
 				A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */,
-				A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */,
 				32870C031BE15155000AC9B6 /* NewNightController.swift */,
+				A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */,
 				32870C091BE17FCB000AC9B6 /* Night.swift */,
+				32A07ECB1BEAE689002BCFA6 /* CustomAlbum.swift */,
 				A3FFA5DE1BD5DAEB00E85678 /* Main.storyboard */,
 				A3FFA5E11BD5DAEB00E85678 /* Assets.xcassets */,
 				A3FFA5E31BD5DAEB00E85678 /* LaunchScreen.storyboard */,
@@ -204,8 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B277C8C31BF93B4F00381B90 /* NightTableViewController.swift in Sources */,
 				A3FFA5DD1BD5DAEB00E85678 /* ViewController.swift in Sources */,
 				32870C0A1BE17FCB000AC9B6 /* Night.swift in Sources */,
+				B277C8C11BF92F2100381B90 /* NightTableViewCell.swift in Sources */,
+				32A07ECC1BEAE689002BCFA6 /* CustomAlbum.swift in Sources */,
 				32870C041BE15155000AC9B6 /* NewNightController.swift in Sources */,
 				A3FFA5DB1BD5DAEB00E85678 /* AppDelegate.swift in Sources */,
 			);
@@ -336,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FadedNights/Info.plist;
@@ -350,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FadedNights/Info.plist;

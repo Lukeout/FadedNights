@@ -1,9 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p7A-ws-c5q">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Your Nights-->
+        <scene sceneID="wTy-8G-A9l">
+            <objects>
+                <tableViewController id="MId-pH-4uB" customClass="NightTableViewController" customModule="FadedNights" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Ur-m2-yIn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NightTableViewCell" rowHeight="90" id="TMJ-Gv-Pq0" customClass="NightTableViewCell" customModule="FadedNights" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TMJ-Gv-Pq0" id="NYo-eW-12D">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEq-De-xC9">
+                                            <rect key="frame" x="0.0" y="-1" width="90" height="90"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Night Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqB-Pn-8BJ">
+                                            <rect key="frame" x="98" y="8" width="502" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="RqB-Pn-8BJ" id="1O0-uk-gYf"/>
+                                    <outlet property="photoImageView" destination="uEq-De-xC9" id="GFi-uh-ZU8"/>
+                                    <segue destination="oay-qI-Bm1" kind="show" identifier="ShowDetail" id="sku-rs-ADU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MId-pH-4uB" id="XNm-ch-Krf"/>
+                            <outlet property="delegate" destination="MId-pH-4uB" id="Ijw-9E-wvG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Nights" id="GGX-5k-dAY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sul-go-NbS">
+                            <connections>
+                                <segue destination="fmk-7k-ZAr" kind="presentation" identifier="AddItem" id="d3l-G9-Nr0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkG-Yb-0yF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="346"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,32 +75,56 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set Night Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbX-Ro-30t">
-                                <rect key="frame" x="20" y="63" width="264" height="30"/>
+                                <rect key="frame" x="20" y="63" width="167" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7B-k9-ay3">
-                                <rect key="frame" x="20" y="108" width="122" height="30"/>
+                                <rect key="frame" x="195" y="63" width="122" height="30"/>
                                 <state key="normal" title="Create New Night"/>
                                 <connections>
-                                    <segue destination="oay-qI-Bm1" kind="show" identifier="toNewNight" id="1gP-rx-Alc"/>
+                                    <segue destination="fmk-7k-ZAr" kind="show" identifier="toNewNight" id="1gP-rx-Alc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ip-4M-WL3">
-                                <rect key="frame" x="20" y="177" width="264" height="21"/>
+                                <rect key="frame" x="20" y="146" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fru-5f-e5w">
-                                <rect key="frame" x="20" y="206" width="240" height="82"/>
+                                <rect key="frame" x="20" y="175" width="141" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RR5-3C-WET">
-                                <rect key="frame" x="20" y="312" width="205" height="230"/>
+                                <rect key="frame" x="169" y="146" width="120" height="146"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvj-eB-HLT">
+                                <rect key="frame" x="23" y="101" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qf-N9-r5Y">
+                                <rect key="frame" x="113" y="123" width="176" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWG-iZ-2VC">
+                                <rect key="frame" x="23" y="123" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkF-2V-0vZ">
+                                <rect key="frame" x="113" y="101" width="190" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -57,14 +133,16 @@
                         <outlet property="createdNightDesc" destination="fru-5f-e5w" id="g58-9k-GxC"/>
                         <outlet property="createdNightPic" destination="RR5-3C-WET" id="T6V-j9-oOh"/>
                         <outlet property="createdNightTitle" destination="5ip-4M-WL3" id="Pcz-0n-HvV"/>
+                        <outlet property="curloc" destination="OkF-2V-0vZ" id="ayy-8A-2fp"/>
+                        <outlet property="curloc2" destination="2qf-N9-r5Y" id="glE-0w-mTR"/>
                         <outlet property="nightTitle" destination="gbX-Ro-30t" id="hIC-NX-vdA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="349"/>
+            <point key="canvasLocation" x="2681" y="349"/>
         </scene>
-        <!--New Night Controller-->
+        <!--New Night-->
         <scene sceneID="Jya-K2-vcy">
             <objects>
                 <viewController id="oay-qI-Bm1" customClass="NewNightController" customModule="FadedNights" customModuleProvider="target" sceneMemberID="viewController">
@@ -76,47 +154,113 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jZ-ty-ezY">
-                                <rect key="frame" x="20" y="20" width="552" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxA-FP-4pm">
-                                <rect key="frame" x="20" y="337" width="125" height="30"/>
-                                <state key="normal" title="Take Profile Photo"/>
-                                <connections>
-                                    <action selector="takePhoto:" destination="oay-qI-Bm1" eventType="touchUpInside" id="stw-oV-h2b"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-wb-tON">
-                                <rect key="frame" x="20" y="368" width="125" height="156"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cb6-Id-gDf">
-                                <rect key="frame" x="20" y="63" width="240" height="256"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXW-Ft-pLa">
-                                <rect key="frame" x="20" y="532" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toMain" id="ik4-h8-NVs"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ifR-vP-xVL">
+                                <rect key="frame" x="20" y="77" width="560" height="266"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Night Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="No9-fJ-kPt">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cb6-Id-gDf">
+                                        <rect key="frame" x="0.0" y="42" width="560" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxA-FP-4pm">
+                                        <rect key="frame" x="0.0" y="104" width="125" height="30"/>
+                                        <state key="normal" title="Take Profile Photo"/>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="oay-qI-Bm1" eventType="touchUpInside" id="stw-oV-h2b"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-wb-tON">
+                                        <rect key="frame" x="0.0" y="146" width="90" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Ac7-FZ-ff9"/>
+                                            <constraint firstAttribute="width" constant="90" id="rpg-MC-BaO"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cb6-Id-gDf" secondAttribute="trailing" id="2Bu-cb-nOS"/>
+                                    <constraint firstItem="cb6-Id-gDf" firstAttribute="leading" secondItem="ifR-vP-xVL" secondAttribute="leading" id="Iu9-wI-4ip"/>
+                                    <constraint firstAttribute="trailing" secondItem="No9-fJ-kPt" secondAttribute="trailing" id="JW2-nG-hFK"/>
+                                    <constraint firstItem="No9-fJ-kPt" firstAttribute="leading" secondItem="ifR-vP-xVL" secondAttribute="leading" id="Xze-wg-qoE"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ifR-vP-xVL" firstAttribute="top" secondItem="EDs-gM-84k" secondAttribute="bottom" constant="13" id="dQ9-ZQ-GJI"/>
+                            <constraint firstItem="ifR-vP-xVL" firstAttribute="leading" secondItem="HL9-RN-2cO" secondAttribute="leadingMargin" id="tSt-Gm-WeO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ifR-vP-xVL" secondAttribute="trailing" id="tld-9S-pgo"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Night" id="8Pg-Iu-hhI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WyX-sy-TZw">
+                            <connections>
+                                <action selector="cancel:" destination="oay-qI-Bm1" id="dBD-Me-CRQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ngL-v5-gal">
+                            <connections>
+                                <segue destination="gdO-WA-sDX" kind="unwind" unwindAction="unwindToNightList:" id="jT6-D2-bKa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Description" destination="cb6-Id-gDf" id="aCP-2W-sX3"/>
                         <outlet property="imageView" destination="FtJ-wb-tON" id="LMQ-TM-7w6"/>
-                        <outlet property="nightNameLabel" destination="3jZ-ty-ezY" id="rhe-Q7-UGw"/>
+                        <outlet property="nightNameLabel" destination="No9-fJ-kPt" id="mCz-80-CSl"/>
+                        <outlet property="saveButton" destination="ngL-v5-gal" id="PWe-5l-6yx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sx3-YN-SWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gdO-WA-sDX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="349"/>
+            <point key="canvasLocation" x="2681" y="349"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vOF-Tj-nbr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p7A-ws-c5q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lLZ-cL-Q2r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MId-pH-4uB" kind="relationship" relationship="rootViewController" id="Q7f-83-dXi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRE-aa-dGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="346"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Aol-xt-Iuo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fmk-7k-ZAr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Spq-iQ-VnG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oay-qI-Bm1" kind="relationship" relationship="rootViewController" id="ny3-G5-5Wp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hiA-1R-RFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1937" y="785"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="d3l-G9-Nr0"/>
+        <segue reference="sku-rs-ADU"/>
+    </inferredMetricsTieBreakers>
 </document>
