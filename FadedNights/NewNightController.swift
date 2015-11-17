@@ -152,6 +152,9 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
 
         // Do any additional setup after loading the view.
         
+        // DATE IMEPLEMENTATION 
+        date.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.MediumStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        // END DATE IMPLEMENTATION
         
         // LOCATION GPS IMPLEMENTATION
         /* Are location services available on this device? */
@@ -194,7 +197,7 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         // needed so keyboard disappears upon hitting enter
         self.nightNameLabel.delegate = self
         
-        date.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.MediumStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        
         
         // enable the save button only if the text field has a valid Meal name.
         checkValidNightName()
