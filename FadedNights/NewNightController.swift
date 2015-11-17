@@ -8,8 +8,12 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
+import MapKit
 
-class NewNightController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
+class NewNightController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager?
     
     @IBOutlet weak var nightNameLabel: UITextField!
 
@@ -40,6 +44,97 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    // LOCATION GPS IMPLEMENTATION 
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if locations.count == 0{
+            //handle error here
+            return
+        }
+        
+        let newLocation = locations[0]
+        
+        print("Latitude = \(newLocation.coordinate.latitude)")
+        print("Longitude = \(newLocation.coordinate.longitude)")
+        
+        let geoCoder = CLGeocoder()
+        let ourLocation = CLLocation(latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
+        
+        geoCoder.reverseGeocodeLocation(ourLocation, completionHandler: { (placemarks, error) -> Void in
+            let placeArray = placemarks! as [CLPlacemark]
+            
+            var placeMark: CLPlacemark
+            placeMark = placeArray[0]
+            
+            print(placeMark.addressDictionary)
+            if let street = placeMark.addressDictionary!["Thoroughfare"] as? NSString {
+                print(street)
+                if let city = placeMark.addressDictionary!["ZIP"] as? NSString {
+                    print(city)
+                    let loc = String(street) + ", " + String(city)
+                    self.location.text = String(loc)
+                 }
+            }
+        })
+        
+        //location.text = String(newLocation.coordinate.latitude)
+        //curloc2.text = String(newLocation.coordinate.longitude)
+        
+    }
+    
+    func locationManager(manager: CLLocationManager,
+        didFailWithError error: NSError){
+            print("Location manager failed with error = \(error)")
+    }
+    
+    func locationManager(manager: CLLocationManager,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus){
+            
+            print("The authorization status of location services is changed to: ", terminator: "")
+            
+            switch CLLocationManager.authorizationStatus(){
+            case .AuthorizedAlways:
+                print("Authorized")
+            case .AuthorizedWhenInUse:
+                print("Authorized when in use")
+            case .Denied:
+                print("Denied")
+            case .NotDetermined:
+                print("Not determined")
+            case .Restricted:
+                print("Restricted")
+            }
+            
+    }
+    
+    func displayAlertWithTitle(title: String, message: String){
+        let controller = UIAlertController(title: title,
+            message: message,
+            preferredStyle: .Alert)
+        
+        controller.addAction(UIAlertAction(title: "OK",
+            style: .Default,
+            handler: nil))
+        
+        presentViewController(controller, animated: true, completion: nil)
+        
+    }
+    
+    func createLocationManager(startImmediately startImmediately: Bool){
+        locationManager = CLLocationManager()
+        if let manager = locationManager{
+            print("Successfully created the location manager")
+            manager.delegate = self
+            if startImmediately{
+                manager.startUpdatingLocation()
+            }
+        }
+    }
+    
+    // END GPS IMPLEMENTATION
+    
+    
     // keyboard disappears upon hitting enter
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -56,6 +151,45 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        // LOCATION GPS IMPLEMENTATION
+        /* Are location services available on this device? */
+        if CLLocationManager.locationServicesEnabled(){
+            
+            /* Do we have authorization to access location services? */
+            switch CLLocationManager.authorizationStatus(){
+            case .AuthorizedAlways:
+                /* Yes, always */
+                createLocationManager(startImmediately: true)
+            case .AuthorizedWhenInUse:
+                /* Yes, only when our app is in use */
+                createLocationManager(startImmediately: true)
+            case .Denied:
+                /* No */
+                displayAlertWithTitle("Not Determined",
+                    message: "Location services are not allowed for this app")
+            case .NotDetermined:
+                /* We don't know yet, we have to ask */
+                createLocationManager(startImmediately: false)
+                if let manager = self.locationManager{
+                    manager.requestWhenInUseAuthorization()
+                }
+            case .Restricted:
+                /* Restrictions have been applied, we have no access
+                to location services */
+                displayAlertWithTitle("Restricted",
+                    message: "Location services are not allowed for this app")
+            }
+            
+            
+        } else {
+            /* Location services are not enabled.
+            Take appropriate action: for instance, prompt the
+            user to enable the location services */
+            print("Location services are not enabled")
+        }
+        // END GPS IMPLEMENTATION
         
         // needed so keyboard disappears upon hitting enter
         self.nightNameLabel.delegate = self
