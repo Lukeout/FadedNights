@@ -42,6 +42,10 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         imagePicker.sourceType = .Camera
         
         presentViewController(imagePicker, animated: true, completion: nil)
+        
+        let text = nightNameLabel.text ?? ""
+        saveButton.enabled = !text.isEmpty
+        
     }
     
     // LOCATION GPS IMPLEMENTATION 
@@ -225,6 +229,8 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
                 Description.text = night.desc
             }
             imageView.image = night.photo
+            date.text = night.date
+            location.text = night.loc
         } else {
             Description.text = "Enter a description"
             Description.textColor = UIColor.lightGrayColor()
@@ -246,7 +252,9 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
             textView.text = "Enter a description"
             textView.textColor = UIColor.lightGrayColor()
         }
-        saveButton.enabled = true
+        //saveButton.enabled = true
+        let text = nightNameLabel.text ?? ""
+        saveButton.enabled = !text.isEmpty
     }
     
     
@@ -297,17 +305,22 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
             let viewController = segue.destinationViewController as! NightTableViewController
             viewController.newPic = imageView.image
             
-            // Saving data locally - MS3
-            //let defaults = NSUserDefaults.standardUserDefaults()
             
             let title = nightNameLabel.text
             let desc = Description.text
             let photo = imageView.image
-            night = Night(title: title!, photo: photo, desc: desc)
             
+            var dateN: String?
+            if let date2 = date.text {
+                dateN = date2
+            }
             
-            //defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(newNight), forKey: newNight.title!)
-            //defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(night!), forKey: "night")
+            var locN: String?
+            if let loc = location.text {
+                locN = loc
+            }
+            night = Night(title: title!, photo: photo, desc: desc, date: dateN!, loc: locN!)
+
             
         }
         

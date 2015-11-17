@@ -76,8 +76,9 @@ class NightTableViewController: UITableViewController {
 
         // setting cell data from appropriate night
         cell.nameLabel.text = night.title
-//        cell.photoImageView.image = night.desc
         cell.photoImageView.image = night.photo
+        cell.locLabel.text = night.loc
+        cell.dateLabel.text = night.date
 
         return cell
     }

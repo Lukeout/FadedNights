@@ -11,7 +11,6 @@
 		32870C0A1BE17FCB000AC9B6 /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32870C091BE17FCB000AC9B6 /* Night.swift */; };
 		32A07ECC1BEAE689002BCFA6 /* CustomAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A07ECB1BEAE689002BCFA6 /* CustomAlbum.swift */; };
 		A3FFA5DB1BD5DAEB00E85678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */; };
-		A3FFA5DD1BD5DAEB00E85678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */; };
 		A3FFA5E01BD5DAEB00E85678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5DE1BD5DAEB00E85678 /* Main.storyboard */; };
 		A3FFA5E21BD5DAEB00E85678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5E11BD5DAEB00E85678 /* Assets.xcassets */; };
 		A3FFA5E51BD5DAEB00E85678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FFA5E31BD5DAEB00E85678 /* LaunchScreen.storyboard */; };
@@ -37,7 +36,6 @@
 		32A07ECB1BEAE689002BCFA6 /* CustomAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlbum.swift; sourceTree = "<group>"; };
 		A3FFA5D71BD5DAEB00E85678 /* FadedNights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FadedNights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3FFA5DF1BD5DAEB00E85678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3FFA5E11BD5DAEB00E85678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3FFA5E41BD5DAEB00E85678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */,
 				A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */,
 				32870C031BE15155000AC9B6 /* NewNightController.swift */,
-				A3FFA5DC1BD5DAEB00E85678 /* ViewController.swift */,
 				32870C091BE17FCB000AC9B6 /* Night.swift */,
 				32A07ECB1BEAE689002BCFA6 /* CustomAlbum.swift */,
 				A3FFA5DE1BD5DAEB00E85678 /* Main.storyboard */,
@@ -163,7 +160,7 @@
 				TargetAttributes = {
 					A3FFA5D61BD5DAEB00E85678 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = QW4B85A59T;
+						DevelopmentTeam = VCRWF96B4L;
 					};
 					A3FFA5EA1BD5DAEB00E85678 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -218,7 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B277C8C31BF93B4F00381B90 /* NightTableViewController.swift in Sources */,
-				A3FFA5DD1BD5DAEB00E85678 /* ViewController.swift in Sources */,
 				32870C0A1BE17FCB000AC9B6 /* Night.swift in Sources */,
 				B277C8C11BF92F2100381B90 /* NightTableViewCell.swift in Sources */,
 				32A07ECC1BEAE689002BCFA6 /* CustomAlbum.swift in Sources */,
@@ -356,7 +352,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FadedNights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FadedNights77;
+				PRODUCT_BUNDLE_IDENTIFIER = FadedNights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -370,7 +366,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FadedNights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FadedNights77;
+				PRODUCT_BUNDLE_IDENTIFIER = FadedNights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
