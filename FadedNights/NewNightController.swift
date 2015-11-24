@@ -27,6 +27,9 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet weak var date: UILabel!
     
+    @IBOutlet weak var rest1: UILabel!
+    @IBOutlet weak var rest2: UILabel!
+    
     var apiClient = YelpAPIClient()
     
 
@@ -82,10 +85,35 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
                 if let city = placeMark.addressDictionary!["ZIP"] as? NSString {
                     print(city)
                     
-                    var parameters = ["ll": "37.788022,-122.399797", "category_filter": "burgers", "radius_filter": "3000", "sort": "0"]
+                    //var parameters = ["ll": "37.788022,-122.399797", "category_filter": "burgers", "radius_filter": "3000", "sort": "0"]
                     
-                    self.apiClient.searchPlacesWithParameters(parameters, successSearch: { (data, response) -> Void in
+                    var parameters2 = ["location": String(city), "category_filter": "bars", "sort": "0"]
+                    
+                    self.apiClient.searchPlacesWithParameters(parameters2, successSearch: { (data, response) -> Void in
                         print(NSString(data: data, encoding: NSUTF8StringEncoding))
+                        
+                        var names = [String]()
+                        do {
+                            let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                            
+                            if let businesses = json["businesses"] as? [[String: AnyObject]] {
+                                for business in businesses {
+                                    if let name = business["name"] as? String {
+                                        names.append(name)
+                                    }
+                                }
+                            }
+                           
+                        }
+                        catch {
+                            print("error serializing JSON: \(error)")
+                        }
+                        
+                        print(names)
+                        
+                        
+                        self.rest1.text = String(names[0])
+                        self.rest2.text = String(names[1])
                         
                         }, failureSearch: { (error) -> Void in
                             print(error)
