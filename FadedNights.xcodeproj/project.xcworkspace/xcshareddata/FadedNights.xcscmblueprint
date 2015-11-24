@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ACA899CFE2BB7593603348F6437E7E819F583809",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ACA899CFE2BB7593603348F6437E7E819F583809" : 0,
+    "BA4984BC83BF46A14F2DE79443F06E908D99BB9D" : 0,
+    "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "77AAC304-A293-4CE3-87F8-1404060CF32E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ACA899CFE2BB7593603348F6437E7E819F583809" : "FadedNights\/",
+    "BA4984BC83BF46A14F2DE79443F06E908D99BB9D" : "yelpitoff\/",
+    "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E" : "OAuthSwift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FadedNights",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FadedNights.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dongri\/OAuthSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Lukeout\/FadedNights.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ACA899CFE2BB7593603348F6437E7E819F583809"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dalequi\/yelpitoff.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BA4984BC83BF46A14F2DE79443F06E908D99BB9D"
+    }
+  ]
+}

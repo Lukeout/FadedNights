@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import CoreLocation
 import MapKit
+import OAuthSwift
 
 class NewNightController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate {
     
@@ -26,6 +27,10 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet weak var date: UILabel!
     
+    var apiClient = YelpAPIClient()
+    
+
+    // AUTHENTICATION
     
     
     @IBOutlet var imageView: UIImageView!
@@ -76,6 +81,16 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
                 print(street)
                 if let city = placeMark.addressDictionary!["ZIP"] as? NSString {
                     print(city)
+                    
+                    var parameters = ["ll": "37.788022,-122.399797", "category_filter": "burgers", "radius_filter": "3000", "sort": "0"]
+                    
+                    self.apiClient.searchPlacesWithParameters(parameters, successSearch: { (data, response) -> Void in
+                        print(NSString(data: data, encoding: NSUTF8StringEncoding))
+                        
+                        }, failureSearch: { (error) -> Void in
+                            print(error)
+                    })
+                    
                     let loc = String(street) + ", " + String(city)
                     self.location.text = String(loc)
                  }
