@@ -20,6 +20,7 @@
 		A44502EA1C0406010029FB3D /* OAuthSwift in Resources */ = {isa = PBXBuildFile; fileRef = A44502E91C0406010029FB3D /* OAuthSwift */; };
 		A44502EB1C0406250029FB3D /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40CF1011C03FEA700DBDD51 /* OAuthSwift.framework */; };
 		A44502EC1C0406250029FB3D /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A40CF1011C03FEA700DBDD51 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A44502F11C040A940029FB3D /* OAuthSwift in Resources */ = {isa = PBXBuildFile; fileRef = A44502F01C040A940029FB3D /* OAuthSwift */; };
 		A4D1F3CE1BFA93B9009E3623 /* FadedLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D1F3CD1BFA93B9009E3623 /* FadedLaunch.storyboard */; };
 		B277C8C11BF92F2100381B90 /* NightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */; };
 		B277C8C31BF93B4F00381B90 /* NightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */; };
@@ -121,6 +122,7 @@
 		A40CF0F71C03FEA700DBDD51 /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = ../OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		A40CF1101C0402F900DBDD51 /* YelpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIClient.swift; sourceTree = "<group>"; };
 		A44502E91C0406010029FB3D /* OAuthSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OAuthSwift; sourceTree = "<group>"; };
+		A44502F01C040A940029FB3D /* OAuthSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OAuthSwift; sourceTree = "<group>"; };
 		A4D1F3CD1BFA93B9009E3623 /* FadedLaunch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FadedLaunch.storyboard; sourceTree = "<group>"; };
 		B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NightTableViewCell.swift; path = ../NightTableViewCell.swift; sourceTree = "<group>"; };
 		B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightTableViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		A3FFA5D91BD5DAEB00E85678 /* FadedNights */ = {
 			isa = PBXGroup;
 			children = (
+				A44502F01C040A940029FB3D /* OAuthSwift */,
 				B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */,
 				B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */,
 				A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */,
@@ -345,6 +348,7 @@
 			files = (
 				A44502EA1C0406010029FB3D /* OAuthSwift in Resources */,
 				A4D1F3CE1BFA93B9009E3623 /* FadedLaunch.storyboard in Resources */,
+				A44502F11C040A940029FB3D /* OAuthSwift in Resources */,
 				A3FFA5E51BD5DAEB00E85678 /* LaunchScreen.storyboard in Resources */,
 				A3FFA5E21BD5DAEB00E85678 /* Assets.xcassets in Resources */,
 				A3FFA5E01BD5DAEB00E85678 /* Main.storyboard in Resources */,
