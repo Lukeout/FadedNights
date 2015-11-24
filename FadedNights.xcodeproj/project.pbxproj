@@ -160,7 +160,7 @@
 				TargetAttributes = {
 					A3FFA5D61BD5DAEB00E85678 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = VCRWF96B4L;
+						DevelopmentTeam = QW4B85A59T;
 					};
 					A3FFA5EA1BD5DAEB00E85678 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -352,7 +352,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FadedNights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FadedNights;
+				PRODUCT_BUNDLE_IDENTIFIER = FadedNights99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -366,7 +366,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FadedNights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FadedNights;
+				PRODUCT_BUNDLE_IDENTIFIER = FadedNights99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
