@@ -76,14 +76,7 @@
 			remoteGlobalIDString = C4D50DF71BFB693F0053B624;
 			remoteInfo = OAuthSwiftTests;
 		};
-		A40CF10C1C03FECC00DBDD51 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A40CF0F71C03FEA700DBDD51 /* OAuthSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F43502791A6791B200038A29;
-			remoteInfo = OAuthSwift;
-		};
-		A44502ED1C0406250029FB3D /* PBXContainerItemProxy */ = {
+		A46CD5E31C0416F300D7A9C1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A40CF0F71C03FEA700DBDD51 /* OAuthSwift.xcodeproj */;
 			proxyType = 1;
@@ -225,8 +218,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A40CF10D1C03FECC00DBDD51 /* PBXTargetDependency */,
-				A44502EE1C0406250029FB3D /* PBXTargetDependency */,
+				A46CD5E41C0416F300D7A9C1 /* PBXTargetDependency */,
 			);
 			name = FadedNights;
 			productName = FadedNights;
@@ -395,15 +387,10 @@
 			target = A3FFA5D61BD5DAEB00E85678 /* FadedNights */;
 			targetProxy = A3FFA5EC1BD5DAEB00E85678 /* PBXContainerItemProxy */;
 		};
-		A40CF10D1C03FECC00DBDD51 /* PBXTargetDependency */ = {
+		A46CD5E41C0416F300D7A9C1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OAuthSwift;
-			targetProxy = A40CF10C1C03FECC00DBDD51 /* PBXContainerItemProxy */;
-		};
-		A44502EE1C0406250029FB3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OAuthSwift;
-			targetProxy = A44502ED1C0406250029FB3D /* PBXContainerItemProxy */;
+			targetProxy = A46CD5E31C0416F300D7A9C1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
