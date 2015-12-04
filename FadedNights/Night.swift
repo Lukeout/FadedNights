@@ -18,6 +18,9 @@ class Night : NSObject, NSCoding {
     var photo:UIImage?
     var date:String?
     var loc:String?
+    var drinks:Int?
+    var money:Double?
+    var bac:Double?
     
     // MARK: Archiving Paths
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
@@ -30,16 +33,22 @@ class Night : NSObject, NSCoding {
         static let descKey = "desc"
         static let dateKey = "date"
         static let locKey = "loc"
+        static let drinksKey = "drinks"
+        static let moneyKey = "money"
+        static let bac = "bac"
     }
     
     // MARK: Initialization
-    init?(title: String, photo: UIImage?, desc: String, date: String, loc: String) {
+    init?(title: String, photo: UIImage?, desc: String, date: String, loc: String, drinks: Int, money: Double, bac: Double) {
         // Initialize stored properties.
         self.title = title
         self.photo = photo
         self.desc = desc
         self.date = date
         self.loc = loc
+        self.drinks = drinks
+        self.money = money
+        self.bac = bac
         
         super.init()
         
@@ -63,8 +72,14 @@ class Night : NSObject, NSCoding {
         
         let loc = aDecoder.decodeObjectForKey(PropertyKey.locKey) as? String
         
+        let drinks = aDecoder.decodeIntegerForKey(PropertyKey.drinksKey)
+        
+        let money = aDecoder.decodeDoubleForKey(PropertyKey.moneyKey)
+        
+        let bac = aDecoder.decodeDoubleForKey(PropertyKey.bac)
+        
         // Must call designated initializer.
-        self.init(title: title, photo: photo, desc: desc!, date: date!, loc: loc!)
+        self.init(title: title, photo: photo, desc: desc!, date: date!, loc: loc!, drinks: drinks, money: money, bac: bac)
         
     }
     
@@ -75,6 +90,9 @@ class Night : NSObject, NSCoding {
         aCoder.encodeObject(desc, forKey: PropertyKey.descKey)
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
         aCoder.encodeObject(loc, forKey: PropertyKey.locKey)
+        aCoder.encodeInteger(drinks!, forKey: PropertyKey.drinksKey)
+        aCoder.encodeDouble(money!, forKey: PropertyKey.moneyKey)
+        aCoder.encodeDouble(bac!, forKey: PropertyKey.bac)
         
     }
     

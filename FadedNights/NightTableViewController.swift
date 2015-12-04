@@ -15,20 +15,51 @@ class NightTableViewController: UITableViewController {
     var nights = [Night]()
     var newPic:UIImage!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem()
         
-        // Load any saved meals, otherwise load sample data.
         if let savedNights = loadNights() {
             nights += savedNights
         }
-        else {
-            // load sample data
-            //loadSampleNights()
+        
+        var nightlyDrinks = 0.0
+        var numNights = 0
+        var totalDrinks = 0
+        var nightlyMoney = 0.0
+        var totalMoney = 0.0
+        var totalBac = 0.0
+        var nightlyBac = 0.0
+        
+        for night in nights {
+            totalDrinks += night.drinks!
+            totalMoney += night.money!
+            totalBac += night.bac!
+            numNights++
         }
+        
+        nightlyDrinks = Double(totalDrinks)/Double(numNights)
+        nightlyDrinks = Double(round(100*nightlyDrinks)/100)
+        nightlyMoney = totalMoney/Double(numNights)
+        nightlyBac = totalBac/Double(numNights)
+        //nightlyMoney = Double(round(100*nightlyMoney)/100)
+        //totalMoney = Double(round(100*totalMoney)/100)
+        
+        print(totalMoney)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setValue(String(totalDrinks), forKey: "totalDrinks")
+        defaults.setValue(String(nightlyDrinks), forKey: "nightlyDrinks")
+        defaults.setValue(String(numNights), forKey: "numNights")
+        defaults.setValue(String(format:"%.02f", totalMoney), forKey: "totalMoney")
+        defaults.setValue(String(format:"%.02f", nightlyMoney), forKey: "nightlyMoney")
+        defaults.setValue(String(format:"%.03f", nightlyBac), forKey: "nightlyBac")
+        defaults.synchronize()
+        
         
         if ((self.newPic) != nil) {
             //createdNightPic.image = newPic
@@ -98,6 +129,41 @@ class NightTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             nights.removeAtIndex(indexPath.row)
+            
+            var nightlyDrinks = 0.0
+            var numNights = 0
+            var totalDrinks = 0
+            var nightlyMoney = 0.0
+            var totalMoney = 0.0
+            var totalBac = 0.0
+            var nightlyBac = 0.0
+            
+            for night in nights {
+                totalDrinks += night.drinks!
+                totalMoney += night.money!
+                totalBac += night.bac!
+                numNights++
+            }
+            
+            nightlyDrinks = Double(totalDrinks)/Double(numNights)
+            nightlyDrinks = Double(round(100*nightlyDrinks)/100)
+            nightlyMoney = totalMoney/Double(numNights)
+            nightlyBac = totalBac/Double(numNights)
+            //nightlyMoney = Double(round(100*nightlyMoney)/100)
+            //totalMoney = Double(round(100*totalMoney)/100)
+            
+            print(totalMoney)
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            
+            defaults.setValue(String(totalDrinks), forKey: "totalDrinks")
+            defaults.setValue(String(nightlyDrinks), forKey: "nightlyDrinks")
+            defaults.setValue(String(numNights), forKey: "numNights")
+            defaults.setValue(String(format:"%.02f", totalMoney), forKey: "totalMoney")
+            defaults.setValue(String(format:"%.02f", nightlyMoney), forKey: "nightlyMoney")
+            defaults.setValue(String(format:"%.03f", nightlyBac), forKey: "nightlyBac")
+            defaults.synchronize()
+            
             saveNights()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
@@ -158,6 +224,40 @@ class NightTableViewController: UITableViewController {
                 nights.append(night)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
+            
+            var nightlyDrinks = 0.0
+            var numNights = 0
+            var totalDrinks = 0
+            var nightlyMoney = 0.0
+            var totalMoney = 0.0
+            var totalBac = 0.0
+            var nightlyBac = 0.0
+            
+            for night in nights {
+                totalDrinks += night.drinks!
+                totalMoney += night.money!
+                totalBac += night.bac!
+                numNights++
+            }
+            
+            nightlyDrinks = Double(totalDrinks)/Double(numNights)
+            nightlyDrinks = Double(round(100*nightlyDrinks)/100)
+            nightlyMoney = totalMoney/Double(numNights)
+            nightlyBac = totalBac/Double(numNights)
+            //nightlyMoney = Double(round(100*nightlyMoney)/100)
+            //totalMoney = Double(round(100*totalMoney)/100)
+            
+            print(totalMoney)
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            
+            defaults.setValue(String(totalDrinks), forKey: "totalDrinks")
+            defaults.setValue(String(nightlyDrinks), forKey: "nightlyDrinks")
+            defaults.setValue(String(numNights), forKey: "numNights")
+            defaults.setValue(String(format:"%.02f", totalMoney), forKey: "totalMoney")
+            defaults.setValue(String(format:"%.02f", nightlyMoney), forKey: "nightlyMoney")
+            defaults.setValue(String(format:"%.03f", nightlyBac), forKey: "nightlyBac")
+            defaults.synchronize()
             
             saveNights()
         }

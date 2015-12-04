@@ -27,6 +27,61 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet weak var date: UILabel!
     
+    
+    // BAC
+    @IBOutlet weak var bacLabel: UILabel!
+    
+    // No. Drinks
+    @IBOutlet weak var numDrinks: UITextField!
+    @IBAction func incDrinks(sender: UIButton) {
+        let drinks = Int(numDrinks.text!)! + 1
+        numDrinks.text = String(drinks)
+        let text = nightNameLabel.text ?? ""
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var weightG = 0
+        if let s = defaults.stringForKey("weight") {
+            weightG = Int(s)!
+        }
+        var bac = 0.0;
+        if weightG != 0 {
+            bac = 100.0 * 14.0 * ((Double)(drinks)) / ((Double)(weightG))
+            bac = Double(round(1000*bac)/1000)
+        }
+        bacLabel.text = String(bac)
+        
+        saveButton.enabled = !text.isEmpty
+    }
+    @IBAction func decDrinks(sender: UIButton) {
+        let drinks = Int(numDrinks.text!)! - 1
+        if drinks >= 0 {
+            numDrinks.text = String(drinks)
+            let text = nightNameLabel.text ?? ""
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            var weightG = 0
+            if let s = defaults.stringForKey("weight") {
+                weightG = Int(s)!
+            }
+            var bac = 0.0;
+            if weightG != 0 {
+                bac = 100.0 * 14.0 * ((Double)(drinks)) / ((Double)(weightG))
+                bac = Double(round(1000*bac)/1000)
+            }
+            bacLabel.text = String(bac)
+            
+            saveButton.enabled = !text.isEmpty
+        }
+    }
+    
+
+    
+    
+    // $ Spent
+    @IBOutlet weak var moneySpent: UITextField!
+    
+    
+    
     @IBOutlet weak var rest1: UILabel!
     @IBOutlet weak var rest2: UILabel!
     
@@ -74,54 +129,56 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         let ourLocation = CLLocation(latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
         
         geoCoder.reverseGeocodeLocation(ourLocation, completionHandler: { (placemarks, error) -> Void in
-            let placeArray = placemarks! as [CLPlacemark]
-            
-            var placeMark: CLPlacemark
-            placeMark = placeArray[0]
-            
-            print(placeMark.addressDictionary)
-            if let street = placeMark.addressDictionary!["Thoroughfare"] as? NSString {
-                print(street)
-                if let city = placeMark.addressDictionary!["ZIP"] as? NSString {
-                    print(city)
-                    
-                    //var parameters = ["ll": "37.788022,-122.399797", "category_filter": "burgers", "radius_filter": "3000", "sort": "0"]
-                    
-                    var parameters2 = ["location": String(city), "category_filter": "bars", "sort": "0"]
-                    
-                    self.apiClient.searchPlacesWithParameters(parameters2, successSearch: { (data, response) -> Void in
-                        print(NSString(data: data, encoding: NSUTF8StringEncoding))
+            if placemarks != nil {
+                let placeArray = placemarks! as [CLPlacemark]
+                
+                var placeMark: CLPlacemark
+                placeMark = placeArray[0]
+                
+                print(placeMark.addressDictionary)
+                if let street = placeMark.addressDictionary!["Thoroughfare"] as? NSString {
+                    print(street)
+                    if let city = placeMark.addressDictionary!["ZIP"] as? NSString {
+                        print(city)
                         
-                        var names = [String]()
-                        do {
-                            let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                        //var parameters = ["ll": "37.788022,-122.399797", "category_filter": "burgers", "radius_filter": "3000", "sort": "0"]
+                        
+                        let parameters2 = ["location": String(city), "category_filter": "bars", "sort": "0"]
+                        
+                        self.apiClient.searchPlacesWithParameters(parameters2, successSearch: { (data, response) -> Void in
+                            print(NSString(data: data, encoding: NSUTF8StringEncoding))
                             
-                            if let businesses = json["businesses"] as? [[String: AnyObject]] {
-                                for business in businesses {
-                                    if let name = business["name"] as? String {
-                                        names.append(name)
+                            var names = [String]()
+                            do {
+                                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                                
+                                if let businesses = json["businesses"] as? [[String: AnyObject]] {
+                                    for business in businesses {
+                                        if let name = business["name"] as? String {
+                                            names.append(name)
+                                        }
                                     }
                                 }
+                               
                             }
-                           
-                        }
-                        catch {
-                            print("error serializing JSON: \(error)")
-                        }
+                            catch {
+                                print("error serializing JSON: \(error)")
+                            }
+                            
+                            print(names)
+                            
+                            
+                            self.rest1.text = String(names[0])
+                            self.rest2.text = String(names[1])
+                            
+                            }, failureSearch: { (error) -> Void in
+                                print(error)
+                        })
                         
-                        print(names)
-                        
-                        
-                        self.rest1.text = String(names[0])
-                        self.rest2.text = String(names[1])
-                        
-                        }, failureSearch: { (error) -> Void in
-                            print(error)
-                    })
-                    
-                    let loc = String(street) + ", " + String(city)
-                    self.location.text = String(loc)
-                 }
+                        let loc = String(street) + ", " + String(city)
+                        self.location.text = String(loc)
+                     }
+                }
             }
         })
         
@@ -194,8 +251,12 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         view.endEditing(true)
     }
     
+    
+    @IBOutlet weak var ScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ScrollView.contentSize.height = 800
 
         // Do any additional setup after loading the view.
         
@@ -243,8 +304,12 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         
         // needed so keyboard disappears upon hitting enter
         self.nightNameLabel.delegate = self
+        self.moneySpent.delegate = self
+        self.numDrinks.delegate = self
         
-        
+        moneySpent.keyboardType = UIKeyboardType.DecimalPad
+        numDrinks.keyboardType = UIKeyboardType.NumberPad
+
         
         // enable the save button only if the text field has a valid Meal name.
         checkValidNightName()
@@ -274,6 +339,31 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
             imageView.image = night.photo
             date.text = night.date
             location.text = night.loc
+            numDrinks.text = String(night.drinks!)
+            moneySpent.text = String(format:"%.02f", night.money!)
+            
+            // calculate bac based on weight. = 0 if weight is 0
+            let defaults = NSUserDefaults.standardUserDefaults()
+            var weightG = 0
+            if let s = defaults.stringForKey("weight") {
+                weightG = Int(s)!
+            }
+            var bac = 0.0;
+            if weightG != 0 {
+                print("inside bac calc")
+                print(weightG)
+                print(bac)
+                bac = 100.0 * 14.0 * ((Double)(night.drinks!)) / ((Double)(weightG))
+                bac = Double(round(1000*bac)/1000)
+                
+            }
+            if night.bac != bac {
+                let text = nightNameLabel.text ?? ""
+                saveButton.enabled = !text.isEmpty
+            }
+            bacLabel.text = String(format:"%.03f", bac)
+            night.bac = bac
+            
         } else {
             Description.text = "Enter a description"
             Description.textColor = UIColor.lightGrayColor()
@@ -301,10 +391,14 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     
     
-    // for title
+    
+    var activeTextField = UITextField()
+    
     func textFieldDidBeginEditing(textField: UITextField) {
-        // Disable the Save button while editing.
+        
+        self.activeTextField = textField
         saveButton.enabled = false
+
     }
     
     func checkValidNightName() {
@@ -312,10 +406,15 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
         let text = nightNameLabel.text ?? ""
         saveButton.enabled = !text.isEmpty
     }
+    
+
     func textFieldDidEndEditing(textField: UITextField) {
         checkValidNightName()
-        navigationItem.title = textField.text
+        if activeTextField == nightNameLabel {
+            navigationItem.title = textField.text
+        }
     }
+    
     
   
     
@@ -352,6 +451,13 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
             let title = nightNameLabel.text
             let desc = Description.text
             let photo = imageView.image
+            print("numDrinks = " + numDrinks.text!)
+            let drinks = Int(numDrinks.text!)!
+            print("drinks = " + String(drinks))
+            var money = Double(moneySpent.text!)!
+            money = Double(round(100*money)/100)
+            var bac = Double(bacLabel.text!)!
+            bac = Double(round(1000*bac)/1000)
             
             var dateN: String?
             if let date2 = date.text {
@@ -362,7 +468,7 @@ class NewNightController: UIViewController, UINavigationControllerDelegate, UIIm
             if let loc = location.text {
                 locN = loc
             }
-            night = Night(title: title!, photo: photo, desc: desc, date: dateN!, loc: locN!)
+            night = Night(title: title!, photo: photo, desc: desc, date: dateN!, loc: locN!, drinks: drinks, money: money, bac: bac)
 
             
         }

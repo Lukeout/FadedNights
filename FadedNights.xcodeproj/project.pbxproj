@@ -24,6 +24,7 @@
 		A4D1F3CE1BFA93B9009E3623 /* FadedLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D1F3CD1BFA93B9009E3623 /* FadedLaunch.storyboard */; };
 		B277C8C11BF92F2100381B90 /* NightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */; };
 		B277C8C31BF93B4F00381B90 /* NightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */; };
+		B2D291DA1C11862100EB4948 /* StatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D291D91C11862100EB4948 /* StatsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		A4D1F3CD1BFA93B9009E3623 /* FadedLaunch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FadedLaunch.storyboard; sourceTree = "<group>"; };
 		B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NightTableViewCell.swift; path = ../NightTableViewCell.swift; sourceTree = "<group>"; };
 		B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightTableViewController.swift; sourceTree = "<group>"; };
+		B2D291D91C11862100EB4948 /* StatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			children = (
 				A44502F01C040A940029FB3D /* OAuthSwift */,
 				B277C8C21BF93B4F00381B90 /* NightTableViewController.swift */,
+				B2D291D91C11862100EB4948 /* StatsController.swift */,
 				B277C8C01BF92F2100381B90 /* NightTableViewCell.swift */,
 				A3FFA5DA1BD5DAEB00E85678 /* AppDelegate.swift */,
 				32870C031BE15155000AC9B6 /* NewNightController.swift */,
@@ -254,7 +257,7 @@
 				TargetAttributes = {
 					A3FFA5D61BD5DAEB00E85678 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = QW4B85A59T;
+						DevelopmentTeam = VCRWF96B4L;
 					};
 					A3FFA5EA1BD5DAEB00E85678 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -364,6 +367,7 @@
 				B277C8C31BF93B4F00381B90 /* NightTableViewController.swift in Sources */,
 				32870C0A1BE17FCB000AC9B6 /* Night.swift in Sources */,
 				B277C8C11BF92F2100381B90 /* NightTableViewCell.swift in Sources */,
+				B2D291DA1C11862100EB4948 /* StatsController.swift in Sources */,
 				32A07ECC1BEAE689002BCFA6 /* CustomAlbum.swift in Sources */,
 				A40CF1111C0402F900DBDD51 /* YelpAPIClient.swift in Sources */,
 				32870C041BE15155000AC9B6 /* NewNightController.swift in Sources */,
@@ -506,7 +510,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FadedNights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FadedNights99;
+				PRODUCT_BUNDLE_IDENTIFIER = FadedNights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -521,7 +525,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FadedNights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FadedNights99;
+				PRODUCT_BUNDLE_IDENTIFIER = FadedNights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
